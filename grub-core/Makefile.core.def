@@ -1025,6 +1025,11 @@ module = {
 };
 
 module = {
+  name = phymem;
+  common = commands/phymem.c;
+};
+
+module = {
   name = play;
   x86 = commands/i386/pc/play.c;
   enable = x86;
