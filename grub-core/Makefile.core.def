@@ -1025,6 +1025,11 @@ module = {
 };
 
 module = {
+  name = pause;
+  common = commands/pause.c;
+};
+
+module = {
   name = phymem;
   common = commands/phymem.c;
 };
