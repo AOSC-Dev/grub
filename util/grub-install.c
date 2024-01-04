@@ -1076,6 +1076,16 @@ main (int argc, char *argv[])
 	      d = grub_util_path_concat (2, bootdir, "EFI");
 	    }
 	  /*
+            AOSC: We mount the EFI System Partition to /efi by default,
+            if DeployKit is used to install the system.
+	   */
+          if (!grub_util_is_directory (d))
+            {
+              free (d);
+              // FIXME: without a slash here the final path will be "efi".
+              d = grub_util_path_concat (2, rootdir, "/efi");
+            }
+	  /*
 	    The EFI System Partition may have been given directly using
 	    --root-directory.
 	  */
